@@ -2,7 +2,7 @@ package de.abenteuersoftwareentwicklung.tdd;
 
 public class SpielDesLebens {
 
-    public boolean neuerZustand(boolean toteZelle, boolean[] nachbarn) {
+    public boolean neuerZustand(boolean aktuellerZustand, boolean[] nachbarn) {
         return true;
     }
 }

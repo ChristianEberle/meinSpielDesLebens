@@ -7,7 +7,7 @@ import static org.junit.Assert.*;
 public class SpielDesLebensTest {
 
     @Test
-    public void toteZelle_genau3Nachbarn_geboren() {
+    public void toteZelle_genau3LebendeNachbarn_geboren() {
 
         SpielDesLebens spiel = new SpielDesLebens();
 
