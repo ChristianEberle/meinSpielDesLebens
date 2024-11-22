@@ -33,4 +33,9 @@ public class Spielbrett {
         }
         return super.equals(o);
     }
+
+    @Override
+    public String toString() {
+        return Arrays.deepToString(zellen);
+    }
 }
