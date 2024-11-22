@@ -22,5 +22,22 @@ public class SpielDesLebensTest {
 
         assertTrue(neuerZustand);
     }
+
+    @Test
+    public void toteZelle_weniger3LebendeNachbarn_bleibtTot() {
+
+        SpielDesLebens spiel = new SpielDesLebens();
+
+        final boolean toteZelle = false;
+
+        boolean[] nachbarn = { false, true, true, //
+                                false, false, //
+                                false, false, false //
+        };
+
+        boolean neuerZustand = spiel.neuerZustand(toteZelle, nachbarn);
+
+        assertFalse(neuerZustand);
+    }
   
 }
