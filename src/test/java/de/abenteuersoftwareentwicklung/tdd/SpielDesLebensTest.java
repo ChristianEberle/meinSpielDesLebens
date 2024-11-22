@@ -13,9 +13,9 @@ public class SpielDesLebensTest {
 
         final boolean toteZelle = false;
 
-        boolean[] nachbarn = { true, true, true, //
-                                false, false, //
-                                false, false, false
+        boolean[] nachbarn = {  true,   true,   true, //
+                                false,          false, //
+                                false,  false,  false
         };
 
         boolean neuerZustand = spiel.neuerZustand(toteZelle, nachbarn);
@@ -30,9 +30,9 @@ public class SpielDesLebensTest {
 
         final boolean toteZelle = false;
 
-        boolean[] nachbarn = { false, true, true, //
-                                false, false, //
-                                false, false, false //
+        boolean[] nachbarn = {  false,  true,   true, //
+                                false,          false, //
+                                false,  false,  false //
         };
 
         boolean neuerZustand = spiel.neuerZustand(toteZelle, nachbarn);
