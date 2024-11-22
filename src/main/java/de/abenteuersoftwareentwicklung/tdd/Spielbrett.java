@@ -5,9 +5,16 @@ import java.util.Arrays;
 public class Spielbrett {
 
     private boolean[][] zellen;
+    private Lebensfunke funke;
 
     public Spielbrett(boolean[][] zellen) {
         this.zellen = zellen;
+        this.funke = new Lebensfunke();
+    }
+
+    public Spielbrett(boolean[][] zellen, Lebensfunke funke) {
+        this.zellen = zellen;
+        this.funke = funke;
     }
 
     public boolean statusDerZelle(int x, int y) {
@@ -41,5 +48,18 @@ public class Spielbrett {
 
     public boolean[][] neueLeereZellen() {
         return new boolean[zellen.length][zellen[0].length];
+    }
+
+    public Spielbrett naechsteSituation() {
+        boolean[][] neueZellen = neueLeereZellen();
+        for (int x = 0; x < neueZellen.length; x++) {
+            for (int y = 0; y < neueZellen[x].length; y++) {
+                boolean aktuelleZelle = statusDerZelle(x, y);
+                boolean[] nachbarn = getNachbarnDerZelle(x, y);
+                neueZellen[x][y] = funke.neuerZustand(aktuelleZelle, nachbarn);
+            }
+        }
+        this.zellen = neueZellen;
+        return this;
     }
 }

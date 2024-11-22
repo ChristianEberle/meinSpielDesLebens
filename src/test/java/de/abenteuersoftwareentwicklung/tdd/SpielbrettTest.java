@@ -133,4 +133,115 @@ public class SpielbrettTest {
 
     }
 
+    @Test
+    public void leeresFeldBleibtLeer() {
+        boolean[][] zellen = {
+                {false, false, false, false},
+                {false, false, false, false},
+                {false, false, false, false},
+                {false, false, false, false},
+        };
+        Spielbrett aktuelleSituation = new Spielbrett(zellen);
+
+        Spielbrett neueSituation = aktuelleSituation.naechsteSituation();
+
+        boolean [][] erwarteteZellen = {
+                {false, false, false, false},
+                {false, false, false, false},
+                {false, false, false, false},
+                {false, false, false, false},
+        };
+        Spielbrett erwarteteSituation = new Spielbrett(erwarteteZellen);
+        assertEquals(erwarteteSituation, neueSituation);
+    }
+
+    @Test
+    public void blockBleibtBlock() {
+        boolean[][] zellen = {
+                {false, false, false, false},
+                {false, true, true, false},
+                {false, true, true, false},
+                {false, false, false, false},
+        };
+        Spielbrett aktuelleSituation = new Spielbrett(zellen);
+
+        Spielbrett neueSituation = aktuelleSituation.naechsteSituation();
+
+        boolean [][] erwarteteZellen = {
+                {false, false, false, false},
+                {false, true, true, false},
+                {false, true, true, false},
+                {false, false, false, false},
+        };
+        Spielbrett erwarteteSituation = new Spielbrett(erwarteteZellen);
+        assertEquals(erwarteteSituation, neueSituation);
+    }
+
+    @Test
+    public void blinkerBlinkt() {
+        boolean[][] zellen = {
+                {false, false, false, false},
+                {false, true,  true,  true},
+                {false, false, false, false},
+                {false, false, false, false},
+        };
+        Spielbrett aktuelleSituation = new Spielbrett(zellen);
+
+        Spielbrett neueSituation = aktuelleSituation.naechsteSituation();
+
+        boolean [][] erwarteteZellen = {
+                {false, false, true,  false},
+                {false, false, true,  false},
+                {false, false, true,  false},
+                {false, false, false, false},
+        };
+        Spielbrett erwarteteSituation = new Spielbrett(erwarteteZellen);
+        assertEquals(erwarteteSituation, neueSituation);
+    }
+
+    @Test
+    public void blinkerBlinktDoppelt() {
+        boolean[][] zellen = {
+                {false, false, false, false},
+                {false, true,  true,  true},
+                {false, false, false, false},
+                {false, false, false, false},
+        };
+        Spielbrett aktuelleSituation = new Spielbrett(zellen);
+
+        Spielbrett neueSituation = aktuelleSituation.naechsteSituation();
+        neueSituation = neueSituation.naechsteSituation();
+
+        boolean [][] erwarteteZellen = {
+                {false, false, false, false},
+                {false, true,  true,  true},
+                {false, false, false, false},
+                {false, false, false, false},
+        };
+        Spielbrett erwarteteSituation = new Spielbrett(erwarteteZellen);
+        assertEquals(erwarteteSituation, neueSituation);
+    }
+
+    @Test
+    public void blinkerBlinktDoppelt_inKleinemFeld() {
+        boolean[][] zellen = {
+                {false, false, false},
+                {true,  true,  true},
+                {false, false, false},
+
+        };
+        Spielbrett aktuelleSituation = new Spielbrett(zellen);
+
+        Spielbrett neueSituation = aktuelleSituation.naechsteSituation();
+        neueSituation = neueSituation.naechsteSituation();
+
+        boolean [][] erwarteteZellen = {
+                {false, false, false},
+                {true,  true,  true},
+                {false, false, false},
+        };
+        Spielbrett erwarteteSituation = new Spielbrett(erwarteteZellen);
+        assertEquals(erwarteteSituation, neueSituation);
+    }
+
 }
