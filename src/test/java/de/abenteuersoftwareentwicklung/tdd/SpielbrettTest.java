@@ -45,4 +45,24 @@ public class SpielbrettTest {
         assertFalse(spielbrett.statusDerZelle(2,1));
     }
 
+    @Test
+    public void nachbarnDerMittlerenZelle_AlleAnderenZellen() {
+        boolean[][] zellen = {
+                {false, false, false},
+                {false, true,  false},
+                {false, false, false}
+        };
+
+        Spielbrett spielbrett = new Spielbrett(zellen);
+        boolean[] erwarteteNachbarn = {
+                false, false, false,
+                false,        false,
+                false, false, false
+        };
+
+        boolean[] nachbarn = spielbrett.getNachbarnDerZelle(1,1);
+
+        assertArrayEquals(erwarteteNachbarn, nachbarn);
+    }
+
 }
