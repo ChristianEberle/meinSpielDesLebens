@@ -142,5 +142,22 @@ public class SpielDesLebensTest {
 
         assertFalse(neuerZustand);
     }
+
+    @Test
+    public void lebendeZelle_mit2LebendeNachbarn_bleibtLeben() {
+
+        SpielDesLebens spiel = new SpielDesLebens();
+
+        final boolean lebendeZelle = true;
+
+        boolean[] nachbarn = {  true,   true,   false,
+                                false,          false,
+                                false,  false,  false
+        };
+
+        boolean neuerZustand = spiel.neuerZustand(lebendeZelle, nachbarn);
+
+        assertTrue(neuerZustand);
+    }
   
 }
