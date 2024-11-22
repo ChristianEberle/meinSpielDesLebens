@@ -6,7 +6,7 @@ public class Spielbrett {
     }
 
 
-    public boolean statusDerZelle(int i, int j) {
+    public boolean statusDerZelle(int x, int y) {
         return true;
     }
 }
