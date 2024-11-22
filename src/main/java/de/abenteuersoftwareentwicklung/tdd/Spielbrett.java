@@ -38,4 +38,8 @@ public class Spielbrett {
     public String toString() {
         return Arrays.deepToString(zellen);
     }
+
+    public boolean[][] neueLeereZellen() {
+        return new boolean[zellen.length][zellen[0].length];
+    }
 }

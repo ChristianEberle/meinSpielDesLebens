@@ -10,7 +10,7 @@ public class Spielrunde {
     }
 
     public Spielbrett naechsteSituation(Spielbrett aktuelleSituation) {
-        boolean[][] neueZellen = new boolean[4][4];
+        boolean[][] neueZellen = aktuelleSituation.neueLeereZellen();
         for (int x = 0; x < neueZellen.length; x++) {
             for (int y = 0; y < neueZellen[x].length; y++) {
                 boolean aktuelleZelle = aktuelleSituation.statusDerZelle(x, y);
