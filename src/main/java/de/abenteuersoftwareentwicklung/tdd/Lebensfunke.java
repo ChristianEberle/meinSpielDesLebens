@@ -1,6 +1,6 @@
 package de.abenteuersoftwareentwicklung.tdd;
 
-public class SpielDesLebens {
+public class Lebensfunke {
 
     private static final int GUTE_LEBENSBEDINGUNG = 3;
     private static final int AKZEPTABLE_LEBENSBEDINGUNG = 2;

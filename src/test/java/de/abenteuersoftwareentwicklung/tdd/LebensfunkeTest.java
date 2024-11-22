@@ -4,12 +4,12 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class SpielDesLebensTest {
+public class LebensfunkeTest {
 
     @Test
     public void toteZelle_genau3LebendeNachbarn_wirdGeboren() {
 
-        SpielDesLebens spiel = new SpielDesLebens();
+        Lebensfunke spiel = new Lebensfunke();
 
         final boolean toteZelle = false;
 
@@ -26,7 +26,7 @@ public class SpielDesLebensTest {
     @Test
     public void toteZelle_genau3LebendeNachbarn_wirdGeboren_andereReihenfolge() {
 
-        SpielDesLebens spiel = new SpielDesLebens();
+        Lebensfunke spiel = new Lebensfunke();
 
         final boolean toteZelle = false;
 
@@ -44,7 +44,7 @@ public class SpielDesLebensTest {
     @Test
     public void toteZelle_weniger3LebendeNachbarn_bleibtTot() {
 
-        SpielDesLebens spiel = new SpielDesLebens();
+        Lebensfunke spiel = new Lebensfunke();
 
         final boolean toteZelle = false;
 
@@ -61,7 +61,7 @@ public class SpielDesLebensTest {
     @Test
     public void toteZelle_weniger3LebendeNachbarn_bleibtTot_keineLebendeNachbarn() {
 
-        SpielDesLebens spiel = new SpielDesLebens();
+        Lebensfunke spiel = new Lebensfunke();
 
         final boolean toteZelle = false;
 
@@ -78,7 +78,7 @@ public class SpielDesLebensTest {
     @Test
     public void toteZelle_mehr3LebendeNachbarn_bleibtTot() {
 
-        SpielDesLebens spiel = new SpielDesLebens();
+        Lebensfunke spiel = new Lebensfunke();
 
         final boolean toteZelle = false;
 
@@ -95,7 +95,7 @@ public class SpielDesLebensTest {
     @Test
     public void toteZelle_mehr3LebendeNachbarn_bleibtTot_alleNachbarnLeben() {
 
-        SpielDesLebens spiel = new SpielDesLebens();
+        Lebensfunke spiel = new Lebensfunke();
 
         final boolean toteZelle = false;
 
@@ -112,7 +112,7 @@ public class SpielDesLebensTest {
     @Test
     public void lebendeZelle_weniger2LebendeNachbarn_stirbt() {
 
-        SpielDesLebens spiel = new SpielDesLebens();
+        Lebensfunke spiel = new Lebensfunke();
 
         final boolean lebendeZelle = true;
 
@@ -129,7 +129,7 @@ public class SpielDesLebensTest {
     @Test
     public void lebendeZelle_weniger2LebendeNachbarn_stirbt_keineLebendeNachbarn() {
 
-        SpielDesLebens spiel = new SpielDesLebens();
+        Lebensfunke spiel = new Lebensfunke();
 
         final boolean lebendeZelle = true;
 
@@ -146,7 +146,7 @@ public class SpielDesLebensTest {
     @Test
     public void lebendeZelle_mit2LebendeNachbarn_bleibtLeben() {
 
-        SpielDesLebens spiel = new SpielDesLebens();
+        Lebensfunke spiel = new Lebensfunke();
 
         final boolean lebendeZelle = true;
 
@@ -163,7 +163,7 @@ public class SpielDesLebensTest {
     @Test
     public void lebendeZelle_mit3LebendeNachbarn_bleibtLeben() {
 
-        SpielDesLebens spiel = new SpielDesLebens();
+        Lebensfunke spiel = new Lebensfunke();
 
         final boolean lebendeZelle = true;
 
@@ -180,7 +180,7 @@ public class SpielDesLebensTest {
     @Test
     public void lebendeZelle_mitMehrAls3LebendeNachbarn_stirbt() {
 
-        SpielDesLebens spiel = new SpielDesLebens();
+        Lebensfunke spiel = new Lebensfunke();
 
         final boolean lebendeZelle = true;
 
