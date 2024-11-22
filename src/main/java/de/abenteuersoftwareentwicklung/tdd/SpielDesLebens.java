@@ -12,7 +12,8 @@ public class SpielDesLebens {
     }
 
     private boolean neuerZustandLebenderZelle(boolean[] nachbarn) {
-        return anzahlLebenderZellen(nachbarn) >= 2;
+        int lebendeNachbarn = anzahlLebenderZellen(nachbarn);
+        return lebendeNachbarn == 2 || lebendeNachbarn == 3;
     }
 
     private boolean neuerZustandToterZelle(boolean[] nachbarn) {
