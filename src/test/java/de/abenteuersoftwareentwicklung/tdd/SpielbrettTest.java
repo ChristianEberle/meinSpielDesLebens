@@ -32,4 +32,17 @@ public class SpielbrettTest {
         assertFalse(spielbrett.statusDerZelle(1,2));
     }
 
+    @Test
+    public void gibStatusNochEinerAnderenZelleZurueck() {
+        boolean[][] zellen = {
+                {false, false, false},
+                {false, true,  false},
+                {false, false, false}
+        };
+
+        Spielbrett spielbrett = new Spielbrett(zellen);
+
+        assertFalse(spielbrett.statusDerZelle(2,1));
+    }
+
 }
