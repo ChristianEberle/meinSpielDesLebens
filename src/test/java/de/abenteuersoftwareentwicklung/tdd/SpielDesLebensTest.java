@@ -118,7 +118,7 @@ public class SpielDesLebensTest {
 
         boolean[] nachbarn = {  true,   false,  false,
                                 false,          false,
-                                false,  true,   false
+                                false,  false,  false
         };
 
         boolean neuerZustand = spiel.neuerZustand(lebendeZelle, nachbarn);

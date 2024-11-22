@@ -6,7 +6,7 @@ public class SpielDesLebens {
 
     public boolean neuerZustand(boolean aktuellerZustand, boolean[] nachbarn) {
         if(aktuellerZustand) {
-            return anzahlLebenderZellen(nachbarn) == 2;
+            return anzahlLebenderZellen(nachbarn) >= 2;
         }
         int lebendeNachbarn = anzahlLebenderZellen(nachbarn);
         return lebendeNachbarn == GUTE_LEBENSBEDINGUNG;
