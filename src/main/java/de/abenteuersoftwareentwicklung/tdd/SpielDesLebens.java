@@ -3,6 +3,7 @@ package de.abenteuersoftwareentwicklung.tdd;
 public class SpielDesLebens {
 
     private static final int GUTE_LEBENSBEDINGUNG = 3;
+    private static final int AKZEPTABLE_LEBENSBEDINGUNG = 2;
 
     public boolean neuerZustand(boolean aktuelleZelleLebt, boolean[] nachbarn) {
         if (aktuelleZelleLebt)
@@ -13,7 +14,7 @@ public class SpielDesLebens {
 
     private boolean neuerZustandLebenderZelle(boolean[] nachbarn) {
         int lebendeNachbarn = anzahlLebenderZellen(nachbarn);
-        return lebendeNachbarn == 2 || lebendeNachbarn == 3;
+        return lebendeNachbarn == AKZEPTABLE_LEBENSBEDINGUNG || lebendeNachbarn == GUTE_LEBENSBEDINGUNG;
     }
 
     private boolean neuerZustandToterZelle(boolean[] nachbarn) {
