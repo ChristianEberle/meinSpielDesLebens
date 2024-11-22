@@ -13,6 +13,10 @@ public class Spielbrett {
     }
 
     public boolean[] getNachbarnDerZelle(int i, int i1) {
-        return null;
+        return new boolean[]{
+                false, false, false,
+                false,        false,
+                false, false, false
+        };
     }
 }
