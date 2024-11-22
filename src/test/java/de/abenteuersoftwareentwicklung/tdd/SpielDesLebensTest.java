@@ -59,7 +59,7 @@ public class SpielDesLebensTest {
     }
 
     @Test
-    public void toteZelle_weniger3LebendeNachbarn_bleibt_Tot_keineLebendeNachbarn() {
+    public void toteZelle_weniger3LebendeNachbarn_bleibtTot_keineLebendeNachbarn() {
 
         SpielDesLebens spiel = new SpielDesLebens();
 
@@ -68,6 +68,23 @@ public class SpielDesLebensTest {
         boolean[] nachbarn = {  false,  false,  false,
                                 false,          false,
                                 false,  false,  false
+        };
+
+        boolean neuerZustand = spiel.neuerZustand(toteZelle, nachbarn);
+
+        assertFalse(neuerZustand);
+    }
+
+    @Test
+    public void toteZelle_mehr3LebendeNachbarn_bleibtTot() {
+
+        SpielDesLebens spiel = new SpielDesLebens();
+
+        final boolean toteZelle = false;
+
+        boolean[] nachbarn = {  true,   false,  false,
+                                true,           false,
+                                true,   true,   false
         };
 
         boolean neuerZustand = spiel.neuerZustand(toteZelle, nachbarn);
