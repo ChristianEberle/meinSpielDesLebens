@@ -9,14 +9,16 @@ public class Spielbrett {
     }
 
     public boolean statusDerZelle(int x, int y) {
+        if (x < 0 || y < 0)
+            return false;
         return zellen[x][y];
     }
 
     public boolean[] getNachbarnDerZelle(int x, int y) {
         return new boolean[]{
-                zellen[x-1][y-1],zellen[x][y-1],zellen[x+1][y-1],
-                zellen[x-1][y],                 zellen[x+1][y],
-                zellen[x-1][y+1],zellen[x][y+1],zellen[x+1][y+1]
+                statusDerZelle(x-1,y-1),statusDerZelle(x,y-1),statusDerZelle(x+1,y-1),
+                statusDerZelle(x-1,y),                 statusDerZelle(x+1,y),
+                statusDerZelle(x-1,y+1),statusDerZelle(x,y+1),statusDerZelle(x+1,y+1)
         };
     }
 }
