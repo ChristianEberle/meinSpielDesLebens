@@ -1,5 +1,7 @@
 package de.abenteuersoftwareentwicklung.tdd;
 
+import java.util.Arrays;
+
 public class Spielbrett {
 
     private boolean[][] zellen;
@@ -9,7 +11,7 @@ public class Spielbrett {
     }
 
     public boolean statusDerZelle(int x, int y) {
-        if (x < 0 || y < 0)
+        if (x < 0 || y < 0 || x >= zellen.length || y >= zellen.length)
             return false;
         return zellen[x][y];
     }
@@ -20,5 +22,15 @@ public class Spielbrett {
                 statusDerZelle(x-1,y),                 statusDerZelle(x+1,y),
                 statusDerZelle(x-1,y+1),statusDerZelle(x,y+1),statusDerZelle(x+1,y+1)
         };
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o instanceof Spielbrett) {
+            Spielbrett s = (Spielbrett) o;
+            if(Arrays.deepEquals(zellen, s.zellen))
+                return true;
+        }
+        return super.equals(o);
     }
 }
