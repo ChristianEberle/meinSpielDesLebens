@@ -176,5 +176,23 @@ public class SpielDesLebensTest {
 
         assertTrue(neuerZustand);
     }
+
+    @Test
+    public void lebendeZelle_mitMehrAls3LebendeNachbarn_stirbt() {
+
+        SpielDesLebens spiel = new SpielDesLebens();
+
+        final boolean lebendeZelle = true;
+
+        boolean[] nachbarn = {  true,   true,   true,
+                                true,           false,
+                                false,  false,  false
+        };
+
+        boolean neuerZustand = spiel.neuerZustand(lebendeZelle, nachbarn);
+
+        assertFalse(neuerZustand);
+
+    }
   
 }
