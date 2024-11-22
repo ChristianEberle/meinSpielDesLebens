@@ -98,7 +98,22 @@ public class SpielbrettTest {
 
         assertEquals(3, lebendeZellen(nachbarn));
         assertEquals(5, toteZellen(nachbarn));
+    }
 
+    @Test
+    public void nachbarnEinerSeitenZelle_AlleZellenAussenSindTot() {
+        boolean[][] zellen = {
+                {true,  false, false},
+                {false, true,  false},
+                {false, true,  true}
+        };
+
+        Spielbrett spielbrett = new Spielbrett(zellen);
+
+        boolean[] nachbarn = spielbrett.getNachbarnDerZelle(0,0);
+
+        assertEquals(1, lebendeZellen(nachbarn));
+        assertEquals(7, toteZellen(nachbarn));
     }
 
 }
