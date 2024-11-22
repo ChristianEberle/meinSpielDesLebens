@@ -91,5 +91,22 @@ public class SpielDesLebensTest {
 
         assertFalse(neuerZustand);
     }
+
+    @Test
+    public void toteZelle_mehr3LebendeNachbarn_bleibtTot_alleNachbarnLeben() {
+
+        SpielDesLebens spiel = new SpielDesLebens();
+
+        final boolean toteZelle = false;
+
+        boolean[] nachbarn = {  true,   true,   true,
+                                true,           true,
+                                true,   true,   true
+        };
+
+        boolean neuerZustand = spiel.neuerZustand(toteZelle, nachbarn);
+
+        assertFalse(neuerZustand);
+    }
   
 }
