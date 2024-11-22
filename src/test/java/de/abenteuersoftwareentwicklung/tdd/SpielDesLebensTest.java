@@ -108,5 +108,39 @@ public class SpielDesLebensTest {
 
         assertFalse(neuerZustand);
     }
+
+    @Test
+    public void lebendeZelle_weniger2LebendeNachbarn_stirbt() {
+
+        SpielDesLebens spiel = new SpielDesLebens();
+
+        final boolean lebendeZelle = true;
+
+        boolean[] nachbarn = {  true,   false,  false,
+                                false,          false,
+                                false,  true,   false
+        };
+
+        boolean neuerZustand = spiel.neuerZustand(lebendeZelle, nachbarn);
+
+        assertFalse(neuerZustand);
+    }
+
+    @Test
+    public void lebendeZelle_weniger2LebendeNachbarn_stirbt_keineLebendeNachbarn() {
+
+        SpielDesLebens spiel = new SpielDesLebens();
+
+        final boolean lebendeZelle = true;
+
+        boolean[] nachbarn = {  false,  false,  false,
+                                false,          false,
+                                false,  false,  false
+        };
+
+        boolean neuerZustand = spiel.neuerZustand(lebendeZelle, nachbarn);
+
+        assertFalse(neuerZustand);
+    }
   
 }
