@@ -65,6 +65,20 @@ public class SpielbrettTest {
         assertArrayEquals(erwarteteNachbarn, nachbarn);
     }
 
+    private int toteZellen(boolean[] nachbarn) {
+        int tot = 0;
+        for (boolean zellen : nachbarn)
+            if (!zellen) tot++;
+        return tot;
+    }
+
+    private int lebendeZellen(boolean[] nachbarn) {
+        int lebend = 0;
+        for (boolean zellen : nachbarn)
+            if (zellen) lebend++;
+        return lebend;
+    }
+
     @Test
     public void nachbarnDerMittlerenZelle_AlleAnderenZellen_2() {
         boolean[][] zellen = {
@@ -82,7 +96,8 @@ public class SpielbrettTest {
 
         boolean[] nachbarn = spielbrett.getNachbarnDerZelle(1,1);
 
-        assertArrayEquals(erwarteteNachbarn, nachbarn);
+        assertEquals(3, lebendeZellen(nachbarn));
+        assertEquals(5, toteZellen(nachbarn));
 
     }
 

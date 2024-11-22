@@ -12,11 +12,11 @@ public class Spielbrett {
         return zellen[x][y];
     }
 
-    public boolean[] getNachbarnDerZelle(int i, int i1) {
+    public boolean[] getNachbarnDerZelle(int x, int y) {
         return new boolean[]{
-                false, false, false,
-                false,        false,
-                false, false, false
+                zellen[x-1][y-1],zellen[x][y-1],zellen[x+1][y-1],
+                zellen[x-1][y],                 zellen[x+1][y],
+                zellen[x-1][y+1],zellen[x][y+1],zellen[x+1][y+1]
         };
     }
 }
