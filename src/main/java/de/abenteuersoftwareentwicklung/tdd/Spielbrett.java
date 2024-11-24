@@ -31,21 +31,6 @@ public class Spielbrett {
         };
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (o instanceof Spielbrett) {
-            Spielbrett s = (Spielbrett) o;
-            if(Arrays.deepEquals(zellen, s.zellen))
-                return true;
-        }
-        return super.equals(o);
-    }
-
-    @Override
-    public String toString() {
-        return Arrays.deepToString(zellen);
-    }
-
     public boolean[][] neueLeereZellen() {
         return new boolean[zellen.length][zellen[0].length];
     }
@@ -61,5 +46,30 @@ public class Spielbrett {
         }
         this.zellen = neueZellen;
         return this;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o instanceof Spielbrett) {
+            Spielbrett s = (Spielbrett) o;
+            if(Arrays.deepEquals(zellen, s.zellen))
+                return true;
+        }
+        return super.equals(o);
+    }
+
+    @Override
+    public String toString() {
+        String s = "";
+        for (int x = 0; x < zellen.length; x++) {
+            for (int y = 0; y < zellen[x].length; y++) {
+                if(zellen[x][y])
+                    s += "#";
+                else
+                    s += "~";
+            }
+            s += "\n";
+        }
+        return s;
     }
 }

@@ -244,4 +244,18 @@ public class SpielbrettTest {
         assertEquals(erwarteteSituation, neueSituation);
     }
 
+    @Test
+    public void toStringTest() {
+        boolean[][] zellen = {
+                {false, true, false},
+                {false, true, false},
+                {false, true, false},
+        };
+        Spielbrett spielbrett = new Spielbrett(zellen);
+
+        String actual = spielbrett.toString();
+
+        assertEquals("~#~\n~#~\n~#~\n", actual);
+    }
+
 }
