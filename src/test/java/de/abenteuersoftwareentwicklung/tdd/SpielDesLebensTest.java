@@ -8,22 +8,24 @@ import static org.mockito.Mockito.*;
 
 public class SpielDesLebensTest {
 
+    public static final boolean[][] BLINKER_A = {
+            {false, false, false},
+            {true, true, true},
+            {false, false, false},
+    };
+
+    public static final boolean[][] BLINKER_B = {
+            {false, true, false},
+            {false, true, false},
+            {false, true, false},
+    };
+
     @Test
     public void startenDesSpielsOhneArgument_ZweiAusgabenWerdenErzeugt() {
         Ausgabe ausgabe = mock(Ausgabe.class);
         InOrder orderVerifier = inOrder(ausgabe);
-        boolean[][] zellen = {
-                {false, false, false},
-                {true, true, true},
-                {false, false, false},
-        };
-        Spielbrett anfangsSituation = new Spielbrett(zellen);
-        boolean[][] erwarteteZellen = {
-                {false, true, false},
-                {false, true, false},
-                {false, true, false},
-        };
-        Spielbrett erwartetesSpielbrett = new Spielbrett(erwarteteZellen);
+        Spielbrett anfangsSituation = new Spielbrett(BLINKER_A);
+        Spielbrett erwartetesSpielbrett = new Spielbrett(BLINKER_B);
         SpielDesLebens spiel = new SpielDesLebens(anfangsSituation, ausgabe);
 
         spiel.go();
