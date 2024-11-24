@@ -32,7 +32,17 @@ public class SpielDesLebensTest {
 
         orderVerifier.verify(ausgabe, calls(1)).zeige(anfangsSituation);
         orderVerifier.verify(ausgabe).zeige(erwartetesSpielbrett);
+    }
 
+    @Test
+    public void startenDesSpielsMitArgument4_FuenfAusgabenWerdenErzeugt() {
+        Ausgabe ausgabe = mock(Ausgabe.class);
+        Spielbrett anfangsSituation = new Spielbrett(BLINKER_A);
+        SpielDesLebens spiel = new SpielDesLebens(anfangsSituation, ausgabe);
+
+        spiel.go(4);
+
+        verify(ausgabe, times(5)).zeige(any(Spielbrett.class));
     }
 
 }
