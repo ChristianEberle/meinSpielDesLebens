@@ -16,4 +16,12 @@ public class SpielDesLebens {
         ausgabe.zeige(situation);
     }
 
+    public void go(int runden) {
+        ausgabe.zeige(situation);
+        for (int i = 0; i < runden; i++) {
+            situation = situation.naechsteSituation();
+            ausgabe.zeige(situation);
+        }
+    }
+
 }
