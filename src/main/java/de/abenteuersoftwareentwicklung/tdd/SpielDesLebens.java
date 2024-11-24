@@ -11,9 +11,7 @@ public class SpielDesLebens {
     }
 
     public void go() {
-        ausgabe.zeige(situation);
-        situation = situation.naechsteSituation();
-        ausgabe.zeige(situation);
+        go(1);
     }
 
     public void go(int runden) {
